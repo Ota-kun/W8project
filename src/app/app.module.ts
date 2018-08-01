@@ -15,11 +15,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { AddtitleComponent } from './addtitle/addtitle.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'movielist', component: MovieListComponent, pathMatch: 'full' },
-  { path: 'ratemovie', component: RateMovieComponent },
+  { path: 'ratemovie', component: RateMovieComponent }
 ]
 
 @NgModule({
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     CarouselComponent,
     HomeComponent,
     RateMovieComponent,
-    MovieListComponent
+    MovieListComponent,
+    AddtitleComponent
   ],
   imports: [
     BrowserModule,
