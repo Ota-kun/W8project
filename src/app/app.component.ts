@@ -18,10 +18,6 @@ export class AppComponent {
     this.http.get('http://localhost:40252/Api/Movieinfoes/').subscribe(data => {
       console.log(data);
       this.data=data;
-      interface UserResponse {
-        title: string;
-        description: string;
-      }
 
     });
   }

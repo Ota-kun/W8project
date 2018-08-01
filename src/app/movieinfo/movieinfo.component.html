@@ -1,3 +1,40 @@
-<p>
-  movieinfo works!
-</p>
+<br />
+<div class="movieinfot">
+  <!--
+  {{data|json}}
+  -->
+  
+  <button type="button" [routerLink]="['/ratemovie']" class="btn btn-primary btn-lg">Arvostele elokuva</button><br />
+
+  <div id="titlekooste">
+    <p>
+      <strong>ELOKUVAN NIMI, VUOSILUKU</strong>
+    </p>
+    <p>
+        
+    </p>
+    <p>
+      Genre: <br />
+      Director: <br />
+      Duration: <br />
+      Cast: <br /><br />
+
+      <strong>TOTAL RATING: X</strong>
+    </p>
+  </div>
+
+
+  <ul>
+      <li *ngFor="let m of data"><div class="arvostelut">{{m.Rating}}</div></li><br />
+  </ul>
+</div>
+
+<!--
+  {{m.Title}}
+  {{m.Year}}
+  {{m.Description}}
+  {{m.Genre}}
+  {{m.Director}}
+  {{m.Duration}}
+  {{m.Cast}}
+-->

@@ -4,9 +4,9 @@
   {{data|json}}
   -->
   
-  <button type="button" class="btn btn-primary btn-lg">Arvostele elokuva</button><br /><br />
+  <button type="button" [routerLink]="['/ratemovie']" class="btn btn-primary btn-lg">Arvostele elokuva</button><br /><br />
   <ul>
-      <li *ngFor="let m of data"><div class="tietoboksi"><h4>{{m.Title}}, {{m.Year}}</h4><p>{{m.Rating}}</p></div><br /></li>
+      <li *ngFor="let m of data"><div class="tietoboksi"><h4><a [routerLink]="['/movieinfo']">{{m.Title}}, {{m.Year}}</a></h4><p>{{m.Rating}}</p></div><br /></li>
   </ul>
 
 </div>

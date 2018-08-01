@@ -20,7 +20,8 @@ import { MovieinfoComponent } from './movieinfo/movieinfo.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'movielist', component: MovieListComponent, pathMatch: 'full' },
-  { path: 'ratemovie', component: RateMovieComponent }
+  { path: 'ratemovie', component: RateMovieComponent },
+  { path: 'movieinfo', component: MovieinfoComponent }
 ]
 
 @NgModule({

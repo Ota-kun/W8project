@@ -19,7 +19,6 @@ export class MovieListComponent implements OnInit {
     this.http.get('http://localhost:40252/Api/Movieinfoes/').subscribe(data => {
       console.log(data);
       this.data=data;
-
     });
   }
 }
