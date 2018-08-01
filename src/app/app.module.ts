@@ -15,7 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { AddtitleComponent } from './addtitle/addtitle.component';
+import { MovieinfoComponent } from './movieinfo/movieinfo.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     HomeComponent,
     RateMovieComponent,
     MovieListComponent,
-    AddtitleComponent
+    MovieinfoComponent
   ],
   imports: [
     BrowserModule,

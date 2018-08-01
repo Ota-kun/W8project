@@ -12,4 +12,8 @@ export class AddtitleComponent implements OnInit {
   ngOnInit() {
   }
 
+  addmovie() {
+    console.log("function called.");
+  }
+
 }
