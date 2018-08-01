@@ -18,7 +18,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'movielist', redirectTo: "localhost:40252/api/movieinfoes/", pathMatch: 'full' },
+  { path: 'movielist', component: MovieListComponent, pathMatch: 'full' },
   { path: 'ratemovie', component: RateMovieComponent },
 ]
 

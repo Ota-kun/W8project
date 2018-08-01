@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-movie-list',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieListComponent implements OnInit {
 
-  constructor() { }
+  data;
+  title = 'Movies';
+  results = '';
 
-  ngOnInit() {
+  constructor(private http: HttpClient){
   }
 
+  ngOnInit(): void {
+    this.http.get('http://localhost:40252/Api/Movieinfoes/').subscribe(data => {
+      console.log(data);
+      this.data=data;
+
+    });
+  }
 }
