@@ -1,0 +1,10 @@
+body {
+    width: 60%;
+}
+
+.navi {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
