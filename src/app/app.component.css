@@ -1,5 +1,9 @@
-body {
+header {
+    background-color: white;
     width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navi {
