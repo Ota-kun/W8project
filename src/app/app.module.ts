@@ -16,13 +16,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { MovieinfoComponent } from './movieinfo/movieinfo.component';
+import { SearchlistComponent } from './searchlist/searchlist.component';
+import { SearchdataService } from './searchdata.service';
+import { HttpModule } from '@angular/http';
+import { ToastrModule } from 'ngx-toastr';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'movielist', component: MovieListComponent, pathMatch: 'full' },
+  { path: 'movielist', component: MovieListComponent, pathMatch: 'full', runGuardsAndResolvers: 'always' },
   { path: 'ratemovie', component: RateMovieComponent },
   { path: 'movieinfo', component: MovieinfoComponent },
-  { path: 'movieinfo/title/{{title}}', component: MovieinfoComponent }
+  { path: 'searchlist', component: SearchlistComponent, runGuardsAndResolvers: 'always' }
 ]
 
 @NgModule({
@@ -33,7 +38,8 @@ const appRoutes: Routes = [
     HomeComponent,
     RateMovieComponent,
     MovieListComponent,
-    MovieinfoComponent
+    MovieinfoComponent,
+    SearchlistComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +49,11 @@ const appRoutes: Routes = [
     HttpClientModule,
     NgbModule.forRoot(),
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, { onSameUrlNavigation: 'reload' }),
+    HttpModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [SearchdataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

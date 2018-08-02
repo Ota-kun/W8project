@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NgForm } from '../../../node_modules/@angular/forms';
+import { ToastrService } from 'ngx-toastr'
+
 
 @Component({
   selector: 'app-rate-movie',
@@ -18,11 +21,12 @@ export class RateMovieComponent implements OnInit {
   description;
   rating;
   data;
-  constructor(private http: HttpClient) { }
+  
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
-  onSubmit() {
+  onSubmit(form: NgForm) {
 
     this.data = {
       // "Username": this.Username,
@@ -36,7 +40,8 @@ export class RateMovieComponent implements OnInit {
       "Rating": this.rating
     };
 
-    this.http.post('http://localhost:40252/api/movieinfoes', JSON.stringify(this.data), { headers: { 'Content-Type': 'application/json' } }).toPromise();
+    this.http.post('http://localhost:40252/api/movieinfoes', JSON.stringify(this.data), { headers: { 'Content-Type': 'application/json' } }).toPromise(),
+    this.toastr.success('New rating added successfully', 'Movie Registered');
 
   }
 }

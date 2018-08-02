@@ -8,3 +8,9 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #eeeeee;
 }
+
+div.validation-error{
+    color: red;
+    text-align: left;
+    
+}

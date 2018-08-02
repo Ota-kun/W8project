@@ -15,6 +15,7 @@ export class MovieListComponent implements OnInit {
   */
 
   results = '';
+  username;
   title;
   year;
   genre;
@@ -35,10 +36,10 @@ export class MovieListComponent implements OnInit {
     });
   }
 
-  onRequest() {
+  onClick(m) {
 
     this.data = {
-      // "Username": this.Username,
+      "Username": this.username,
       "Title": this.title,
       "Year": this.year,
       "Genre": this.genre,
@@ -47,6 +48,14 @@ export class MovieListComponent implements OnInit {
       "Cast": this.cast,
       "Description": this.description,
       "Rating": this.rating
+    }
+
+    for(let a of this.data) {
+      if (a.title == m.Title) {
+        a.push('http://localhost:31159//api/movieinfoes/title/{{m.Title}');
+      }
+      // Häikkää
+      return a;
     }
   }
 }

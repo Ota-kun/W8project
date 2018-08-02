@@ -1,0 +1,13 @@
+<br />
+<div class="tiedot">
+  <ul>
+    <li *ngFor="let m of searchData">
+      <div class="tietoboksi">
+        <h4>
+          <a [routerLink]="['/movieinfo']">{{m.Title}}, {{m.Year}}</a>
+        </h4>
+      </div>
+      <br />
+    </li>
+  </ul>
+</div>
