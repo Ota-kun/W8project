@@ -4,28 +4,35 @@
   {{data|json}}
   -->
   
-  <button type="button" [routerLink]="['/ratemovie']" class="btn btn-primary btn-lg">Rate this movie</button><br />
+  <button type="button" [routerLink]="['/ratemovie']" class="btn btn-primary btn-lg">Rate this movie</button><hr />
 
-  <div id="titlekooste">
-    <p>
-      <strong>ELOKUVAN NIMI, VUOSILUKU</strong>
-    </p>
-    <p>
-        
-    </p>
-    <p>
-      Genre: <br />
-      Director: <br />
-      Duration: <br />
-      Cast: <br /><br />
+  <div class="titlekooste">
+  
+      <h4>{{data[2].Title}}, {{data[2].Year}}</h4>
 
-      <strong>TOTAL RATING: X</strong>
-    </p>
+    <table style="width: 80%">
+      <tr>
+        <td class="vasen"><label>Genre: </label></td><td class="right">{{data[2].Genre}}</td>
+      </tr>
+      <tr>
+        <td class="vasen"><label>Director: </label></td><td class="right">{{data[2].Director}}</td>
+      </tr>
+      <tr>
+        <td class="vasen"><label>Duration: </label></td><td class="right">{{data[2].Duration}}</td>
+      </tr>
+      <tr>
+        <td class="vasen"><label>Cast: </label></td><td class="right">{{data[2].Cast}}</td>
+      </tr>
+      <br />
+    </table>
+
+    <strong><p class="ratingSpecial">TOTAL RATING: {{data[2].Rating}}</p></strong>
+    
   </div>
 
 
   <ul>
-      <li *ngFor="let m of data"><div class="arvostelut">{{m.Rating}}</div></li><br />
+      <li *ngFor="let m of data"><div class="arvostelut">NICKNAME, {{data[2].Rating}}</div></li><br />
   </ul>
 </div>
 
