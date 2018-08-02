@@ -10,7 +10,7 @@ body {
 }
 
 .arvostelut {
-    background-color: #f0efef;
+    background-color: white;
     padding: 2% 0;
     margin: 3%;
     display: block;
@@ -19,7 +19,7 @@ body {
 }
 
 #titlekooste {
-    background-color: #f0efef;
+    background-color: white;
     padding: 2% 0;
     margin: 3%;
     display: block;
