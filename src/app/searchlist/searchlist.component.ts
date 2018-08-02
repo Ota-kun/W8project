@@ -9,7 +9,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class SearchlistComponent implements OnInit, OnDestroy {
 
-  searchData
+  searchData;
 
   // START OF ADDED
   navigationSubscription;

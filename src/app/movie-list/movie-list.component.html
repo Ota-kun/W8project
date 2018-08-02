@@ -28,9 +28,9 @@
     <li *ngFor="let m of data">
       <div class="tietoboksi">
         <h4>
-          <a [routerLink]="['/movieinfo']" (click)="onClick($event)">{{m.Title}} </a>{{m.Year}}
+          <a [routerLink]="['/movieinfo']" (click)="onClick($event)">{{m.Title}}</a><br />{{m.Year}}
         </h4>
-        <p>{{m.Rating}}</p>
+        <p class="reittaus">{{m.Rating}}</p>
       </div>
       <br />
     </li>
