@@ -1,12 +1,39 @@
+<!--
+<br />
+<div class="tiedot">
+  
+  //
+  {{data|json}}
+  //
+  
+  <button type="button" [routerLink]="['/ratemovie']" class="btn btn-primary btn-lg">Rate a movie</button><br /><br />
+  <ul>
+      <li *ngFor="let m of data"><div class="tietoboksi"><h4><a [routerLink]="['/movieinfo']" (click)="onClick(m)">{{m.Title}}, {{m.Year}}</a></h4><p>{{m.Rating}}</p></div><br /></li>
+  </ul>
+
+</div>
+-->
+
+
 <br />
 <div class="tiedot">
   <!--
   {{data|json}}
   -->
-  
-  <button type="button" [routerLink]="['/ratemovie']" class="btn btn-primary btn-lg">Rate a movie</button><br /><br />
+
+  <button type="button" [routerLink]="['/ratemovie']" class="btn btn-primary btn-lg">Rate a movie</button>
+  <br />
+  <br />
   <ul>
-      <li *ngFor="let m of data"><div class="tietoboksi"><h4><a [routerLink]="['/movieinfo']" (click)="onClick(m)">{{m.Title}}, {{m.Year}}</a></h4><p>{{m.Rating}}</p></div><br /></li>
+    <li *ngFor="let m of data">
+      <div class="tietoboksi">
+        <h4>
+          <a [routerLink]="['/movieinfo']" (click)="onClick($event)">{{m.Title}} </a>{{m.Year}}
+        </h4>
+        <p>{{m.Rating}}</p>
+      </div>
+      <br />
+    </li>
   </ul>
 
 </div>

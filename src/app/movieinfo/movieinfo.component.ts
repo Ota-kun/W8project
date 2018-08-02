@@ -1,3 +1,4 @@
+/*
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,11 +9,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MovieinfoComponent implements OnInit {
 
-  /*
+  //
   data
   title = 'Movies';
   results = '';
-  */
+  //
 
   results = '';
   title;
@@ -48,4 +49,31 @@ export class MovieinfoComponent implements OnInit {
       "Rating": this.rating
     };
   }
+}
+*/
+
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { MovieService } from 'src/app/movie.service';
+
+@Component({
+  selector: 'app-movieinfo',
+  templateUrl: './movieinfo.component.html',
+  styleUrls: ['./movieinfo.component.css']
+})
+export class MovieinfoComponent implements OnInit {
+
+  selectedMovie;
+  data;
+  constructor(private http: HttpClient, public movieService: MovieService) { }
+
+  ngOnInit() {
+    this.selectedMovie = this.movieService.movie;
+    this.http.get('http://localhost:40252/Api/Movieinfoes/title/' + this.selectedMovie).subscribe(data => {
+      console.log(data);
+      this.data = data;
+
+    });
+  }
+
 }

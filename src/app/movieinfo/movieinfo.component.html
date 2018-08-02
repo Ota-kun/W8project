@@ -1,8 +1,10 @@
+<!--
+
 <br />
 <div class="movieinfot">
-  <!--
+  //
   {{data|json}}
-  -->
+  //
   
   <button type="button" [routerLink]="['/ratemovie']" class="btn btn-primary btn-lg">Rate this movie</button><hr />
 
@@ -36,6 +38,77 @@
   </ul>
 </div>
 
+//
+  {{m.Title}}
+  {{m.Year}}
+  {{m.Description}}
+  {{m.Genre}}
+  {{m.Director}}
+  {{m.Duration}}
+  {{m.Cast}}
+//
+
+-->
+
+<br />
+<div class="movieinfot">
+  <!--
+  {{data|json}}
+  -->
+
+  <button type="button" [routerLink]="['/ratemovie']" class="btn btn-primary btn-lg">Rate this movie</button>
+  <hr />
+
+  <div class="titlekooste">
+
+    <h4>{{data[0].Title}}, {{data[0].Year}}</h4>
+
+    <table style="width: 80%">
+      <tr>
+        <td class="vasen">
+          <label>Genre: </label>
+        </td>
+        <td class="right">{{data[0].Genre}}</td>
+      </tr>
+      <tr>
+        <td class="vasen">
+          <label>Director: </label>
+        </td>
+        <td class="right">{{data[0].Director}}</td>
+      </tr>
+      <tr>
+        <td class="vasen">
+          <label>Duration: </label>
+        </td>
+        <td class="right">{{data[0].Duration}}</td>
+      </tr>
+      <tr>
+        <td class="vasen">
+          <label>Cast: </label>
+        </td>
+        <td class="right">{{data[0].Cast}}</td>
+      </tr>
+      <br />
+    </table>
+
+    <strong>
+      <p class="ratingSpecial">TOTAL RATING: {{data[0].Rating}}</p>
+    </strong>
+
+  </div>
+
+
+  <ul>
+    <li *ngFor="let m of data">
+      <div class="arvostelut">
+        <h6>{{m.Description}}
+          <br>{{m.Rating}}</h6>
+      </div>
+    </li>
+    <br />
+  </ul>
+</div>
+
 <!--
   {{m.Title}}
   {{m.Year}}
@@ -45,3 +118,4 @@
   {{m.Duration}}
   {{m.Cast}}
 -->
+
