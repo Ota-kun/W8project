@@ -22,7 +22,6 @@ export class NavbarComponent implements OnInit {
     this.dataService.serviceData = [];
     this.http.get('http://localhost:40252/Api/Movieinfoes/title/' + this.search).subscribe(data => {
       console.log(data);
-      console.log("Tuli perille!");
       this.data = data;
       this.dataService.serviceData = data;
 
