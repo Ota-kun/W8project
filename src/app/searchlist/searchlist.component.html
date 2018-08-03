@@ -4,7 +4,7 @@
     <li *ngFor="let m of searchData">
       <div class="tietoboksi">
         <h4>
-          <a [routerLink]="['/movieinfo']">{{m.Title}}, {{m.Year}}</a>
+          <a [routerLink]="['/movieinfo']" (click)="onClick($event)">{{m.Title}}</a>, {{m.Year}}
         </h4>
       </div>
       <br />

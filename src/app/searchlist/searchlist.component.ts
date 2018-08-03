@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SearchdataService } from '../searchdata.service';
 import { Router, NavigationEnd } from '@angular/router';
+import { MovieService } from 'src/app/movie.service';
 
 @Component({
   selector: 'app-searchlist',
@@ -13,7 +14,7 @@ export class SearchlistComponent implements OnInit, OnDestroy {
 
   // START OF ADDED
   navigationSubscription;
-  constructor(public dataService: SearchdataService, private router: Router) {
+  constructor(public movieServiceData: MovieService, public dataService: SearchdataService, private router: Router) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       // If it is a NavigationEnd event re-initalise the component
       if (e instanceof NavigationEnd) {
@@ -33,10 +34,14 @@ export class SearchlistComponent implements OnInit, OnDestroy {
       this.navigationSubscription.unsubscribe();
     }
   }
-// END OF ADDED
+  // END OF ADDED
 
   ngOnInit() {
     this.searchData = this.dataService.serviceData;
+  }
+
+  onClick(event) {
+    this.movieServiceData.movie = event.target.text;
   }
 
 }
