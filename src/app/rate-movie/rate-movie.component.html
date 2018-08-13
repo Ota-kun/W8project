@@ -1,0 +1,89 @@
+<!--ARVOSTELUKENTTÄ-->
+
+<div class="arvosteluwidth">
+    <div class="form-style-5">
+      <form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm)">
+        <fieldset>
+          <legend>
+            <strong>Rate a movie</strong>
+          </legend>
+          <br />
+  
+          <label for="nickname">Nickname:
+            <span class="required">*</span>
+          </label>
+          <div>
+            <input type="text" [(ngModel)]="username" name="field1" placeholder="Nickname *" #field1="ngModel" required minlength="0" style="margin-bottom: 0">
+            <div class="validation-error" *ngIf="field1.invalid && (field1.dirty || field1.touched)"> Username field is required.</div>
+          </div>
+          <label for="title">Title:
+            <span class="required">*</span>
+          </label>
+          <div>
+            <input type="text" [(ngModel)]="title" name="field2" placeholder="Title *" #field2="ngModel" required minlength="0" style="margin-bottom: 0">
+            <!-- appForbiddenName="KyyhkysJussi" -->
+            <div class="validation-error" *ngIf="field2.invalid && (field2.dirty || field2.touched)"> Title field is required.</div>
+            <!-- <div *ngIf="title.errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="title.errors.minlength">
+              Name must be at least 4 characters long.
+            </div> -->
+          </div>
+          <!-- <div *ngIf="field2.errors.forbiddenName">
+            Name cannot be KyyhkysJussi.
+          </div> -->
+  
+          <label for="year">Year:
+            <span class="required">*</span>
+          </label>
+          <div>
+            <input type="number" [(ngModel)]="year" name="field3" placeholder="Year *" #field3="ngModel" required minlength="4" required
+              maxlength="4" style="margin-bottom: 0">
+            <div class="validation-error" *ngIf="field3.invalid && (field3.dirty || field3.touched)"> Year must be entered in form YYYY</div>
+          </div>
+          <label for="genre">Genre:</label>
+          <input type="text" [(ngModel)]="genre" name="field4" placeholder="Genre" style="margin-bottom: 0">
+  
+          <label for="duration">Duration:</label>
+          <input type="number" [(ngModel)]="duration" name="field5" placeholder="Duration (minutes)" style="margin-bottom: 0">
+  
+          <label for="director">Director:</label>
+          <input type="text" [(ngModel)]="director" name="field6" placeholder="Director" style="margin-bottom: 0">
+  
+          <label for="cast">Cast:</label>
+          <input type="text" [(ngModel)]="cast" name="field7" placeholder="Cast" style="margin-bottom: 0">
+  
+          <label for="description">Description:
+            <span class="required">*</span>
+          </label>
+          <div>
+            <textarea name="field8" #field8="ngModel" required minlength="2" [(ngModel)]="description" placeholder="Description" style="margin-bottom: 0"></textarea>
+            <div class="validation-error" *ngIf="field8.invalid && (field8.dirty || field8.touched)"> Description is required</div>
+          </div>
+          <label for="rating">Rating:
+            <span class="required">*</span>
+          </label>
+          <select id="rating" [(ngModel)]="rating" name="field9" required style="margin-bottom: 0">
+            <optgroup label="Your rating">
+              <option id="one">1</option>
+              <option id="two">2</option>
+              <option id="three">3</option>
+              <option id="four">4</option>
+              <option id="five">5</option>
+              <option id="six">6</option>
+              <option id="seven">7</option>
+              <option id="eight">8</option>
+              <option id="nine">9</option>
+              <option id="ten">10</option>
+            </optgroup>
+          </select>
+        </fieldset>
+  
+        <input type="button" (click)="onSubmit()" value="Apply" [disabled]="!movieForm.form.valid" />
+      </form>
+      <!--
+      {{movieForm.form.valid|json}}
+      -->
+    </div>
+  </div>

@@ -1,0 +1,22 @@
+<br />
+<div class="tiedot">
+  <!--
+  {{data|json}}
+  -->
+
+  <button type="button" [routerLink]="['/ratemovie']" class="btn btn-primary btn-lg">Rate a new movie</button>
+  <br />
+  <br />
+  <ul>
+    <li *ngFor="let m of data">
+      <div class="tietoboksi">
+        <h4>
+          <a [routerLink]="['/movieinfo']" (click)="onClick($event)">{{m.Title}}</a><br />{{m.Year}}
+        </h4>
+        <p class="reittaus">{{m.Rating}}</p>
+      </div>
+      <br />
+    </li>
+  </ul>
+
+</div>

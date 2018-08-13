@@ -1,0 +1,33 @@
+body {
+    background-color: antiquewhite;
+}
+
+.tiedot {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tietoboksi {
+    background-color: white;
+    padding: 5% 0 2% 0;
+    margin-left: -4.5%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.reittaus {
+    margin: 1%;
+    font-weight: bold;
+    border: solid 2px;
+    border-radius: 10px;
+    width: 5%;
+    min-width: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffd95c; /*#8a94e2; */
+}
