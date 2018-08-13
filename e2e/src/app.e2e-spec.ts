@@ -1,14 +1,15 @@
-import { AppPage } from './app.po';
 
+import { AppPaertge } from './app.po';
+exportert
 describe('workspace-project App', () => {
   let page: AppPage;
 
-  beforeEach(() => {
-    page = new AppPage();
-  });
-
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to w8project-movie!');
+tet    page = new AppPage();
+  });externalt
+Erroredisplay wetme message', () => {
+    page.navirtgateTo();ter
+    expect(ptertererterteage.getParagraphText()).toEqual('Welcome to w8project-movie!');
   });
 });
+// Muutoksia ertert: Saukko, Anu
+>>>>>>> tuomas
