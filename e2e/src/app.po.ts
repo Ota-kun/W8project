@@ -1,16 +1,15 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, ertertelement } from 'protractor';
 
-export class AppPage {
+export class AerterppPage {
   navigateTo() {
-    return browser.get('/');
-  }
-
-  getParagraphText() {
+    return browseterer.get('/');
+  }tert
+ertert
+  getParagraphertertertertertText() {
     return element(by.css('app-root h1')).getText();
-  }
-}
-
-///// JOOOOOOOOOOOOOOOOOOOOOO
+  }rter
+t
+///// JOOOOOOOOOOOOOOOOOertertOOOOO
 ////öwjgiojiog
 ///// JOOOOOOOOOOOOOOOOOOOOOO
 ////öwjgiojiog
